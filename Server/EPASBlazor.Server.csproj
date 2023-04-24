@@ -21,5 +21,9 @@
     <ProjectReference Include="..\Shared\EPASBlazor.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 
 </Project>
