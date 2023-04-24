@@ -1,8 +1,18 @@
+using EPASBlazor.Server.Context;
+using EPASBlazor.Server.Repository;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<AppDbContext>(opt =>
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection")));
+
+//builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();

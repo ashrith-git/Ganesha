@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace EPASBlazor.Shared
 {
-    public class Student
+    public enum Gender
     {
-        public Guid StudentId { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
+        Male,
+        Female,
+        Other
     }
 }
